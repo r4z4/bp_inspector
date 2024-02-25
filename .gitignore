@@ -1,0 +1,11 @@
+/target
+.env
+
+/assets/data*
+
+/.init.sql
+
+/__pycache__
+
+
+*.pyc
