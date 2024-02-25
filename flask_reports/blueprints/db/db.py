@@ -7,26 +7,12 @@ from psycopg.rows import class_row
 from pydantic import BaseModel, ConfigDict, PostgresDsn
 from typing import TypeVar, Optional, Generic
 from typing import List
+from flask_reports.models.db import Color, Product
 from flask_reports.models.web import Response
 import asyncio
 
 # FIXME Need Blueprint if no routes?
 db_bp = Blueprint('db', __name__)
-
-class Product(BaseModel):
-    id: int
-    name: str
-    labelid: int
-    category: str
-    gender: str
-    currentlyactive: bool
-    created: datetime
-    updated: Optional[datetime]
-
-class Color(BaseModel):
-    id: int
-    name: str
-    rgb: str
 
 # class Foo(BaseModel):
 #     f1: str  # required, cannot be None

@@ -5,7 +5,7 @@
     {% endfor %}
     </ul>
 {% endif %}
-<form method="POST" action="/gemma/writer/submit">
+<form id="writer_form" method="POST" action="/gemma/writer/submit">
     {{ form.name.label }} {{ form.name(size=20) }}
     {{ form.content.label }} {{ form.content }}
     <input type="submit" value="Go">

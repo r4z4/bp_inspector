@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_reports.blueprints.basic.basic import basic_bp
+from flask_reports.blueprints.home.home import home_bp
 from flask_reports.blueprints.redirect.redirect import redirect_bp
 from flask_reports.blueprints.gemma.gemma import gemma_bp
 from flask_reports.blueprints.freeform.freeform import freeform_bp
@@ -12,7 +12,7 @@ SECRET_KEY = os.urandom(32)
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = SECRET_KEY
-    app.register_blueprint(basic_bp)
+    app.register_blueprint(home_bp)
     app.register_blueprint(db_bp)
     app.register_blueprint(gemma_bp, url_prefix="/gemma")
     app.register_blueprint(freeform_bp, url_prefix="/freeform")
